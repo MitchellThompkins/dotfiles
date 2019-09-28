@@ -4,9 +4,10 @@ set number
 set ignorecase
 set tabstop=2
 
+" Show top tab
+set showtabline=2
+
 " Mouse Settings
 set mouse=a
 
 " Keymappings
-nnoremap -- :NERDTree <CR>
-nnoremap u :undo <CR>

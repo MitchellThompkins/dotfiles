@@ -1,0 +1,15 @@
+;[user]
+	;email = mitchell.thompkins@gmail.com
+	;name = Mitchell Thompkins
+
+[include]
+	path = $HOME/.gitconfigemail
+
+[alias]
+	l = log --graph --oneline --max-count=10
+	ll = log --graph --oneline
+	lla = log --graph --oneline --all
+
+	co = checkout
+
+	stat = status
