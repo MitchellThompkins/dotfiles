@@ -1,7 +1,3 @@
-;[user]
-	;email = mitchell.thompkins@gmail.com
-	;name = Mitchell Thompkins
-
 [include]
 	path = $HOME/.gitconfigemail
 
