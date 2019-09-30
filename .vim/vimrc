@@ -1,12 +1,23 @@
-" Configurations
+"Plugins
+
+" Initialize plugin system
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+call plug#end()
+
+" Visual Configs
 syntax on
 set number
-set ignorecase
-set tabstop=2
-set hlsearch
-
-" Show top tab
 set showtabline=2
+
+" Typeset configs
+set tabstop=2
+
+" Search configs 
+set ignorecase
+set hlsearch
 
 " Mouse Settings
 set mouse=a
