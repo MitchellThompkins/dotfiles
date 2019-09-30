@@ -50,3 +50,5 @@ git clone git@github.com:MitchellThompkins/dotfiles.git $HOME/dotfiles
 
 ln -s $HOME/dotfiles/.vim $DIR_VIM
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig $DIR_GITCONFIG 
+
+echo "A dotfiles directory has been setup and configured. You should delete this directory now"
