@@ -19,7 +19,12 @@ set tabstop=2
 set ignorecase
 set hlsearch
 
+" Spelling Configuration
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
+
 " Mouse Settings
 set mouse=a
 
 " Keymappings
+noremap -- :NERDTree <CR>

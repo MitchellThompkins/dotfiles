@@ -111,6 +111,7 @@ git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
 DIR_PLUGIN="$HOME/dotfiles/.vim/plugged/"
 mkdir ${DIR_PLUGIN}
 
+echo ""
 git clone https://github.com/scrooloose/nerdtree.git ${DIR_PLUGIN}
 
 echo ""
