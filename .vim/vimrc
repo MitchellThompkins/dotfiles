@@ -3,7 +3,8 @@
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTree' }
+Plug 'scrooloose/nerdtree'
+", { 'on':  'NERDTree' }
 
 call plug#end()
 
