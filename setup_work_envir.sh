@@ -33,8 +33,8 @@ fi
 
 cat <<EOF >$HOME/.gitconfigemail
 [user]
-  2   email = ${EMAIL}
-  3   name = ${NAME}
+  email = ${EMAIL}
+	name = ${NAME}
 EOF
 
 echo ""
