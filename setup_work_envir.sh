@@ -41,18 +41,18 @@ echo "\n"
 # This portion deletes the .vim/ directory and links a new one  
 DIR_VIM="$HOME/.vim"
 if [ -d "${DIR_VIM}" ]; then
-	rm ${DIR_VIM}
+	rm -rf ${DIR_VIM}
   echo "Removing .vim directory ${DIR_VIM}..."
 else
 	echo "${DIR_VIM} doesn't exist"
 fi
 
 echo "\n"
-# This portion deletes the .gitconfig file and links a new one  
+# This portion deletes the .vimrc file and links a new one  
 DIR_VIMRC="$HOME/.vimrc"
 if [ -f "${DIR_VIMRC}" ]; then
-	rm ${DIR_VIMRC}
-  echo "Removing .gitconfig file ${DIR_VIMRC}..."
+	rm -rf ${DIR_VIMRC}
+  echo "Removing .vimrc file ${DIR_VIMRC}..."
 else
 	echo "${DIR_VIMRC} doesn't exist"
 fi
@@ -61,7 +61,7 @@ echo "\n"
 # This portion deletes the .gitconfig file and links a new one  
 DIR_GITCONFIG="$HOME/.gitconfig"
 if [ -f "${DIR_GITCONFIG}" ]; then
-	rm ${DIR_GITCONFIG}
+	rm -rf ${DIR_GITCONFIG}
   echo "Removing .gitconfig directory ${DIR_GITCONFIG}..."
 else
 	echo "${DIR_GITCONFIG} doesn't exist"
