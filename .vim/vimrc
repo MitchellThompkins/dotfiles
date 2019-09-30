@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()
 
@@ -28,3 +29,4 @@ set mouse=a
 
 " Keymappings
 noremap -- :NERDTree <CR>
+noremap ++ :TableModeToggle <CR>

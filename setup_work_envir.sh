@@ -113,6 +113,7 @@ mkdir ${DIR_PLUGIN}
 
 echo ""
 git clone https://github.com/scrooloose/nerdtree.git ${DIR_PLUGIN}
+git clone https://github.com/dhruvasagar/vim-table-mode.git ${DIR_PLUGIN}
 
 echo ""
 # A nice reminder to delete these files
