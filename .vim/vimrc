@@ -4,7 +4,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-", { 'on':  'NERDTree' }
 
 call plug#end()
 
