@@ -75,6 +75,12 @@ fi
 # This clones a fresh copy into the newly created dotfiles directory
 git clone git@github.com:MitchellThompkins/dotfiles.git $HOME/dotfiles
 
+# This sets up the autoload/ directory
+DIR_AUTOLOAD="$HOME/dotfiles/vim/autoload/"
+mkdir ${DIR_AUTOLOAD}
+
+git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
+
 # This portion sets up the soft links
 ln -s $HOME/dotfiles/.vim $DIR_VIM
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig $DIR_GITCONFIG 
