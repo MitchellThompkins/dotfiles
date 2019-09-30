@@ -1,4 +1,4 @@
-#Instructions
+# Instructions
 
 Clone this into a directory, not in ```$HOME/dotfiles``` 
 
