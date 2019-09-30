@@ -21,7 +21,7 @@ case "$response" in
         ;;
 esac
 
-echo "\n"
+echo ""
 # This portion setups the .gitconfigemail directory which the .gitconfig directory uses
 DIR_GIT_EMAIL="$HOME/.gitconfigemail"
 if [ -d "${DIR_GIT_EMAIL}" ]; then
@@ -37,7 +37,7 @@ cat <<EOF >$HOME/.gitconfigemail
   3   name = ${NAME}
 EOF
 
-echo "\n"
+echo ""
 # This portion deletes the .vim/ directory and links a new one  
 DIR_VIM="$HOME/.vim"
 if [ -d "${DIR_VIM}" ]; then
@@ -47,7 +47,7 @@ else
 	echo "${DIR_VIM} doesn't exist"
 fi
 
-echo "\n"
+echo ""
 # This portion deletes the .vimrc file and links a new one  
 DIR_VIMRC="$HOME/.vimrc"
 if [ -f "${DIR_VIMRC}" ]; then
@@ -57,7 +57,7 @@ else
 	echo "${DIR_VIMRC} doesn't exist"
 fi
 
-echo "\n"
+echo ""
 # This portion deletes the .gitconfig file and links a new one  
 DIR_GITCONFIG="$HOME/.gitconfig"
 if [ -f "${DIR_GITCONFIG}" ]; then
@@ -67,7 +67,7 @@ else
 	echo "${DIR_GITCONFIG} doesn't exist"
 fi
 
-echo "\n"
+echo ""
 # This portion creates the dotfiles/ directory
 DIR_DOT="$HOME/dotfiles/"
 if [ ! -d "$DIR_DOT" ]; then
@@ -86,22 +86,22 @@ else
 	esac
 fi
 
-echo "\n"
+echo ""
 # This clones a fresh copy into the newly created dotfiles directory
 git clone git@github.com:MitchellThompkins/dotfiles.git $HOME/dotfiles
 
-echo "\n"
+echo ""
 # This sets up the autoload/ directory
 DIR_AUTOLOAD="$HOME/dotfiles/.vim/autoload/"
 mkdir ${DIR_AUTOLOAD}
 
 git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
 
-echo "\n"
+echo ""
 # This portion sets up the soft links
 ln -s $HOME/dotfiles/.vim ${DIR_VIM}
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
 
-echo "\n"
+echo ""
 # A nice reminder to delete these files
 echo "A dotfiles directory has been setup and configured. You should delete this directory now."
