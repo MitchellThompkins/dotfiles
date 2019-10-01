@@ -70,7 +70,7 @@ fi
 echo ""
 # This portion creates the dotfiles/ directory
 DIR_DOT="$HOME/dotfiles/"
-if [ ! -d "$DIR_DOT" ]; then
+if [ ! -d "${DIR_DOT}" ]; then
 	mkdir $HOME/dotfiles 
   echo "Creating ${DIR_DOT}..."
 else
@@ -88,7 +88,7 @@ fi
 
 echo ""
 # This clones a fresh copy into the newly created dotfiles directory
-git clone git@github.com:MitchellThompkins/dotfiles.git $HOME/dotfiles
+git clone https://github.com/MitchellThompkins/dotfiles.git $HOME/dotfiles
 
 echo ""
 # This portion sets up the soft links
