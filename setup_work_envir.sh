@@ -24,7 +24,7 @@ esac
 echo ""
 # This portion setups the .gitconfigemail directory which the .gitconfig directory uses
 DIR_GIT_EMAIL="$HOME/.gitconfigemail"
-if [ -d "${DIR_GIT_EMAIL}" ]; then
+if [ -f "${DIR_GIT_EMAIL}" ]; then
     rm ${DIR_GIT_EMAIL}
     echo "Removing .gitconfig file ${DIR_GIT_EMAIL}..."
 else
@@ -34,7 +34,7 @@ fi
 cat <<EOF >$HOME/.gitconfigemail
 [user]
   email = ${EMAIL}
-    name = ${NAME}
+  name = ${NAME}
 EOF
 
 echo ""
