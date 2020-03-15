@@ -95,9 +95,6 @@ echo ""
 ln -s $HOME/dotfiles/.vim ${DIR_VIM}
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
 
-
-
-
 ############### PLUGIN SECTION ###############
 
 echo ""
@@ -110,10 +107,6 @@ git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
 
 DIR_PLUGIN="$HOME/dotfiles/.vim/plugged/"
 mkdir ${DIR_PLUGIN}
-
-echo ""
-git clone https://github.com/scrooloose/nerdtree.git ${DIR_PLUGIN}
-git clone https://github.com/dhruvasagar/vim-table-mode.git ${DIR_PLUGIN}
 
 echo ""
 # A nice reminder to delete these files
