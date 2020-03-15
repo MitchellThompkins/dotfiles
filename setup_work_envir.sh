@@ -97,12 +97,12 @@ ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
 
 ############### PLUGIN SECTION ###############
 
-#echo ""
-## This sets up the autoload/ directory
-#DIR_AUTOLOAD="$HOME/dotfiles/.vim/autoload/"
-#mkdir ${DIR_AUTOLOAD}
-#git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
-#
+echo ""
+# This sets up the autoload/ directory
+DIR_AUTOLOAD="$HOME/dotfiles/.vim/autoload/"
+mkdir ${DIR_AUTOLOAD}
+git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
+
 ## This creates all the plugins
 #
 #DIR_PLUGIN="$HOME/dotfiles/.vim/plugged/"
