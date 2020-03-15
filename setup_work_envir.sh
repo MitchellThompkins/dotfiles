@@ -103,10 +103,10 @@ DIR_AUTOLOAD="$HOME/dotfiles/.vim/autoload/"
 mkdir ${DIR_AUTOLOAD}
 git clone https://github.com/junegunn/vim-plug.git ${DIR_AUTOLOAD}
 
-## This creates all the plugins
-#
-#DIR_PLUGIN="$HOME/dotfiles/.vim/plugged/"
-#mkdir ${DIR_PLUGIN}
+# This creates all the plugins
+
+DIR_PLUGIN="$HOME/dotfiles/.vim/plugged/"
+mkdir ${DIR_PLUGIN}
 
 echo ""
 # A nice reminder to delete these files
