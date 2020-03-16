@@ -1,11 +1,11 @@
 [include]
-	path = $HOME/.gitconfigemail
+    path = ~/.gitconfigemail
 
 [alias]
-	l = log --graph --oneline --max-count=10
-	ll = log --graph --oneline
-	lla = log --graph --oneline --all
+    l = log --graph --oneline --max-count=10
+    ll = log --graph --oneline
+    lla = log --graph --oneline --all
 
-	co = checkout
+    co = checkout
 
-	stat = status
+    stat = status

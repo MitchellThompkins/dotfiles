@@ -31,7 +31,7 @@ else
     echo "${DIR_GIT_EMAIL} doesn't exist"
 fi
 
-cat <<EOF >${HOME}/.gitconfigemail
+cat <<EOF >$HOME/.gitconfigemail
 [user]
   email = ${EMAIL}
   name = ${NAME}
