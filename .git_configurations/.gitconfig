@@ -9,3 +9,6 @@
     co = checkout
 
     stat = status
+
+[editor]
+    editor = vim
