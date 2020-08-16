@@ -42,7 +42,7 @@ let mapleader = "\<Space>"
 
 noremap -- :NERDTree <CR>
 noremap ++ :TableModeToggle <CR>
-nnoremap <C-k> :ClangFormat
+nnoremap <C-k> :ClangFormat<CR>
 nnoremap <C-m> :cNext<CR>
 nnoremap <C-l> :cnext<CR>
 nnoremap <leader>cd :set colorcolumn=0 <CR>
