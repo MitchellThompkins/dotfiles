@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -45,6 +46,12 @@ nnoremap <C-m> :cNext<CR>
 nnoremap <C-l> :cnext<CR>
 nnoremap <leader>cd :set colorcolumn=0 <CR>
 nnoremap <leader>ce :let &colorcolumn = (&textwidth + 1) <CR>
+
+
+" /////////////////////////// 
+"	CLANG-FORMAT SETTINGS
+" /////////////////////////// 
+"g:clang_format#auto_format
 
 " /////////////////////////// 
 "	MARKDOWN PREVIEW SETTINGS
