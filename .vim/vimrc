@@ -42,20 +42,20 @@ let mapleader = "\<Space>"
 
 noremap -- :NERDTree <CR>
 noremap ++ :TableModeToggle <CR>
+nnoremap <C-k> :ClangFormat
 nnoremap <C-m> :cNext<CR>
 nnoremap <C-l> :cnext<CR>
 nnoremap <leader>cd :set colorcolumn=0 <CR>
 nnoremap <leader>ce :let &colorcolumn = (&textwidth + 1) <CR>
 
 
-" /////////////////////////// 
+" ///////////////////////////
 "	CLANG-FORMAT SETTINGS
-" /////////////////////////// 
-"g:clang_format#auto_format
+" ///////////////////////////
 
-" /////////////////////////// 
+" ///////////////////////////
 "	MARKDOWN PREVIEW SETTINGS
-" /////////////////////////// 
+" ///////////////////////////
 " Command Reminders: 
 " <Plug>MarkdownPreview
 " <Plug>MarkdownPreviewStop
