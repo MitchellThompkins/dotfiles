@@ -1,23 +1,28 @@
-"Plugins
-
-" Initialize plugin system
+" ///////////////////////////
+" Plugins
+" ///////////////////////////
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'rhysd/vim-clang-format'
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
+" ///////////////////////////
 " Visual configs
+" ///////////////////////////
 syntax on
 set number
 set showtabline=2
 set listchars=trail:·,tab:→-,extends:▶,precedes:◀
 set list
 
+" ///////////////////////////
 " Typeset configs
+" ///////////////////////////
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -26,18 +31,26 @@ set textwidth=80
 set smarttab
 set autoindent
 
-" Search configs 
+" ///////////////////////////
+" Search configs
+" ///////////////////////////
 set ignorecase
 set hlsearch
 
+" ///////////////////////////
 " Spelling Configuration
+" ///////////////////////////
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
+" ///////////////////////////
 " Mouse Settings
+" ///////////////////////////
 set mouse=a
 
+" ///////////////////////////
 " Keymappings
+" ///////////////////////////
 let mapleader = "\<Space>"
 
 noremap -- :NERDTree <CR>
@@ -48,15 +61,20 @@ nnoremap <C-l> :cnext<CR>
 nnoremap <leader>cd :set colorcolumn=0 <CR>
 nnoremap <leader>ce :let &colorcolumn = (&textwidth + 1) <CR>
 
+" ///////////////////////////
+" Clang-Format Settings
+" ///////////////////////////
+" None
+"
+" ///////////////////////////
+" Vimspector Settings
+" ///////////////////////////
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " ///////////////////////////
-"	CLANG-FORMAT SETTINGS
+" Markdown Preview Settings
 " ///////////////////////////
-
-" ///////////////////////////
-"	MARKDOWN PREVIEW SETTINGS
-" ///////////////////////////
-" Command Reminders: 
+" Command Reminders:
 " <Plug>MarkdownPreview
 " <Plug>MarkdownPreviewStop
 " <Plug>MarkdownPreviewToggle
