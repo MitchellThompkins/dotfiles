@@ -7,7 +7,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'rhysd/vim-clang-format'
-Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -65,11 +64,6 @@ nnoremap <leader>ce :let &colorcolumn = (&textwidth + 1) <CR>
 " Clang-Format Settings
 " ///////////////////////////
 " None
-"
-" ///////////////////////////
-" Vimspector Settings
-" ///////////////////////////
-let g:vimspector_enable_mappings = 'HUMAN'
 
 " ///////////////////////////
 " Markdown Preview Settings
