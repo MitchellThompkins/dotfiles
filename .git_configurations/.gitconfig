@@ -6,6 +6,8 @@
     ll = log --graph --oneline
     lla = log --graph --oneline --all
 
+    pff = pull --ff-only
+
     co = checkout
 
     stat = status
