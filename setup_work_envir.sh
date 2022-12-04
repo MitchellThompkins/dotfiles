@@ -10,13 +10,18 @@ do
     esac
 done
 
+DIR_DOT="$HOME/dotfiles/"
 echo "This will delete the current vim and git configurations"
+echo "This will delete any existing ${DIR_DOT}"
 read -r -p "Are you sure you want to do this? [y/N] " response
 case "$response" in
-    [yY][eE][sS]|[yY]) 
+    [yY][eE][sS]|[yY])
+        rm -rf ${DIR_DOT}
+        mkdir -p ${DIR_DOT}
         echo ""
         ;;
     *)
+        echo "Did nothing."
         exit 1
         ;;
 esac
@@ -38,7 +43,7 @@ cat <<EOF >$HOME/.gitconfigemail
 EOF
 
 echo ""
-# This portion deletes the .vim/ directory and links a new one  
+# This portion deletes the .vim/ directory and links a new one
 DIR_VIM="$HOME/.vim"
 if [ -d "${DIR_VIM}" ]; then
     rm -rf ${DIR_VIM}
@@ -48,7 +53,7 @@ else
 fi
 
 echo ""
-# This portion deletes the .vimrc file and links a new one  
+# This portion deletes the .vimrc file and links a new one
 DIR_VIMRC="$HOME/.vimrc"
 if [ -f "${DIR_VIMRC}" ]; then
     rm -rf ${DIR_VIMRC}
@@ -58,7 +63,7 @@ else
 fi
 
 echo ""
-# This portion deletes the .gitconfig file and links a new one  
+# This portion deletes the .gitconfig file and links a new one
 DIR_GITCONFIG="$HOME/.gitconfig"
 if [ -f "${DIR_GITCONFIG}" ]; then
     rm -rf ${DIR_GITCONFIG}
@@ -67,33 +72,35 @@ else
     echo "${DIR_GITCONFIG} doesn't exist"
 fi
 
+############### CUSTROM RC ###############
 echo ""
-# This portion creates the dotfiles/ directory
-DIR_DOT="$HOME/dotfiles/"
-if [ ! -d "${DIR_DOT}" ]; then
-    mkdir $HOME/dotfiles 
-    echo "Creating ${DIR_DOT}..."
+echo "Adding custom .rc"
+
+rm -rf ${DIR_RC}
+DIR_RC="$HOME/.dotfile_rc"
+cmd_to_add_to_bashrc="\nif [ -f $HOME/.bashrc ]; then\n    . $HOME/.dotfile_rc\nfi\n"
+
+# This is a simple check looking for the text dotfile_rc. Not very elegant but
+# trying to search for the whole expanded string is harder
+if grep -q "dotfile_rc" $HOME/.bashrc
+then
+    echo "./dotfile_rc already in .bashrc"
 else
-    echo "${DIR_DOT} already exists, do you want to remove it?"
-    read -r -p "Are you sure? [y/N] " response
-    case "$response" in
-        [yY][eE][sS]|[yY]) 
-            rm -rf ${DIR_DOT}
-            ;;
-        *)
-            exit 1
-            ;;
-    esac
+    echo "adding ./dotfile_rc to .bashrc"
+    echo -e "${cmd_to_add_to_bashrc}" | tee -a $HOME/.bashrc > /dev/null
 fi
 
 echo ""
-# This clones a fresh copy into the newly created dotfiles directory
-git clone https://github.com/MitchellThompkins/dotfiles.git $HOME/dotfiles
+# This puts a fresh copy of all the contents we care about into the dotfiles dir
+cp -r .bash_configurations/ $HOME/dotfiles/
+cp -r .git_configurations/ $HOME/dotfiles/
+cp -r .vim/ $HOME/dotfiles/
 
+############### Set-up symlinks ###############
 echo ""
-# This portion sets up the soft links
 ln -s $HOME/dotfiles/.vim ${DIR_VIM}
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
+ln -s $HOME/dotfiles/.bash_configurations/.rc ${DIR_RC}
 
 ############### PLUGIN SECTION ###############
 
