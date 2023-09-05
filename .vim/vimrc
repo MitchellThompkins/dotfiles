@@ -35,6 +35,7 @@ set autoindent
 " ///////////////////////////
 set ignorecase
 set hlsearch
+set shortmess-=S
 
 " ///////////////////////////
 " Spelling Configuration
