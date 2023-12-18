@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'lambdalisue/fern.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
@@ -11,12 +12,19 @@ call plug#end()
 " ///////////////////////////
 " file explorer menu settings
 " ///////////////////////////
-let g:netrw_banner = 0        " remove directions at top of file listing
-let g:netrw_liststyle=3       " tree style listing
-let g:netrw_browse_split = 4  " split horizontal
-let g:netrw_altv = 1          " change from left splitting to right
-let g:netrw_winsize=25        " width of window
-let g:netrw_preview=1         " preview window shown in a vertically split window
+function! s:init_fern() abort
+    nmap <buffer> <BS> <Plug>(fern-action-collapse)
+    nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
+    nmap <buffer> h <Plug>(fern-action-leave)
+    nmap <buffer> l <Plug>(fern-action-open-or-leave)
+    nmap <buffer> H <Plug>(fern-action-hidden)
+endfunction
+
+augroup my-fern
+    autocmd!
+    autocmd FileType fern call s:init_fern()
+augroup end
+
 
 " ///////////////////////////
 " Visual configs
@@ -61,7 +69,7 @@ set mouse=a
 " ///////////////////////////
 let mapleader = "\<Space>"
 
-noremap -- :Vexplore <CR>
+noremap -- :Fern . -drawer <CR>
 noremap ++ :TableModeToggle <CR>
 nnoremap <C-m> :cNext<CR>
 nnoremap <C-l> :cnext<CR>
