@@ -109,10 +109,10 @@ cp -r .tmux/ $HOME/dotfiles/
 
 ############### Set-up symlinks ###############
 echo ""
-ln -s $HOME/dotfiles/.vim ${DIR_VIM}
-ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
-ln -s $HOME/dotfiles/.tmux ${DIR_TMUXCONFIG}
-ln -s $HOME/dotfiles/.bash_configurations/.rc ${DIR_RC}
+ln -sf $HOME/dotfiles/.vim ${DIR_VIM}
+ln -sf $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
+ln -sf $HOME/dotfiles/.tmux ${DIR_TMUXCONFIG}
+ln -sf $HOME/dotfiles/.bash_configurations/.rc ${DIR_RC}
 
 ############### PLUGIN SECTION ###############
 
