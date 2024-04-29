@@ -111,7 +111,7 @@ cp -r .tmux/ $HOME/dotfiles/
 echo ""
 ln -s $HOME/dotfiles/.vim ${DIR_VIM}
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
-ln -s $HOME/dotfiles/.tmux.conf ${DIR_TMUXCONFIG}
+ln -s $HOME/dotfiles/.tmux ${DIR_TMUXCONFIG}
 ln -s $HOME/dotfiles/.bash_configurations/.rc ${DIR_RC}
 
 ############### PLUGIN SECTION ###############
