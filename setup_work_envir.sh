@@ -72,6 +72,16 @@ else
     echo "${DIR_GITCONFIG} doesn't exist"
 fi
 
+echo ""
+# This portion deletes the .tmux.conf file and links a new one
+DIR_TMUXCONFIG="$HOME/.tmux.conf"
+if [ -f "${DIR_TMUXCONFIG}" ]; then
+    rm -rf ${DIR_TMUXCONFIG}
+    echo "Removing .tmux.conf directory ${DIR_TMUXCONFIG}..."
+else
+    echo "${DIR_TMUXCONFIG} doesn't exist"
+fi
+
 ############### CUSTROM RC ###############
 echo ""
 echo "Adding custom .rc"
@@ -95,11 +105,13 @@ echo ""
 cp -r .bash_configurations/ $HOME/dotfiles/
 cp -r .git_configurations/ $HOME/dotfiles/
 cp -r .vim/ $HOME/dotfiles/
+cp -r .tmux/ $HOME/dotfiles/
 
 ############### Set-up symlinks ###############
 echo ""
 ln -s $HOME/dotfiles/.vim ${DIR_VIM}
 ln -s $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
+ln -s $HOME/dotfiles/.tmux.conf ${DIR_TMUXCONFIG}
 ln -s $HOME/dotfiles/.bash_configurations/.rc ${DIR_RC}
 
 ############### PLUGIN SECTION ###############
