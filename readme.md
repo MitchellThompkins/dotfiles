@@ -9,7 +9,7 @@ git clone git@github.com:MitchellThompkins/dotfiles.git
 Run setup as
 
 ```
-sudo ./setup_work_envir.sh -e email -n "FirstName LastName"
+./setup_work_envir.sh -e email -n "FirstName LastName"
 ```
 
 When first running vim, make sure to run the ```:PlugInstall``` function (likely requires ```sudo```)
