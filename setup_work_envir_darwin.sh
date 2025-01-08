@@ -82,27 +82,8 @@ else
     echo "${DIR_TMUXCONFIG} doesn't exist"
 fi
 
-############### CUSTROM RC ###############
-echo ""
-echo "Adding custom .rc"
-
-rm -rf ${DIR_RC}
-DIR_RC="$HOME/.dotfile_rc"
-cmd_to_add_to_bashrc="\nif [ -f $HOME/.bashrc ]; then\n    . $HOME/.dotfile_rc\nfi\n"
-
-# This is a simple check looking for the text dotfile_rc. Not very elegant but
-# trying to search for the whole expanded string is harder
-if grep -q "dotfile_rc" $HOME/.bashrc
-then
-    echo "./dotfile_rc already in .bashrc"
-else
-    echo "adding ./dotfile_rc to .bashrc"
-    echo -e "${cmd_to_add_to_bashrc}" | tee -a $HOME/.bashrc > /dev/null
-fi
-
 echo ""
 # This puts a fresh copy of all the contents we care about into the dotfiles dir
-cp -r .bash_configurations/ $HOME/dotfiles/
 cp -r .git_configurations/ $HOME/dotfiles/
 cp -r .vim/ $HOME/dotfiles/
 cp -r .tmux/ $HOME/dotfiles/
@@ -112,7 +93,6 @@ echo ""
 ln -sf $HOME/dotfiles/.vim ${DIR_VIM}
 ln -sf $HOME/dotfiles/.git_configurations/.gitconfig ${DIR_GITCONFIG}
 ln -sf $HOME/dotfiles/.tmux/.tmux.conf ${DIR_TMUXCONFIG}
-ln -sf $HOME/dotfiles/.bash_configurations/.rc ${DIR_RC}
 
 ############### PLUGIN SECTION ###############
 
