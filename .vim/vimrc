@@ -6,6 +6,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'lambdalisue/fern.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -34,6 +36,9 @@ set number
 set showtabline=2
 set listchars=trail:·,tab:→-,extends:▶,precedes:◀
 set list
+
+hi NonText ctermbg=none
+hi Normal guibg=NONE ctermbg=NONE
 
 " ///////////////////////////
 " Typeset configs
