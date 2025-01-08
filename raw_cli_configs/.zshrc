@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # terminal configuration
-export PS1="%B%d > %b"
+export PS1="%B%~ > %b"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
